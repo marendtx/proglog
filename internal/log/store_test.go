@@ -12,6 +12,7 @@ var (
 	width = uint64(len(write)) + lenWidth
 )
 
+// 基本的には、hello worldを書き込んで読み込むだけのシンプルなテスト
 func TestStoreAppendRead(t *testing.T) {
 	f, err := os.CreateTemp("", "store_append_read_test")
 	require.NoError(t, err)
@@ -92,8 +93,8 @@ func TestStoreClose(t *testing.T) {
 func openFile(name string) (file *os.File, size int64, err error) {
 	f, err := os.OpenFile(
 		name,
-		os.O_RDWR|os.O_CREATE|os.O_APPEND,
-		0600,
+		os.O_RDWR|os.O_CREATE|os.O_APPEND, // ファイルの開き方
+		0600,                              // ファイルの所有者に読み書き権限を与える
 	)
 
 	if err != nil {
