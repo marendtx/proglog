@@ -9,7 +9,7 @@ import (
 )
 
 // indexに書き込んだオフセット、ポジションの組み合わせを正しく取得できるかのテスト。
-// TODO: indexに書き込むオフセットは連番になるのか？
+// オフセットは必ず連番。
 func TestIndex(t *testing.T) {
 	f, err := os.CreateTemp(os.TempDir(), "index_test")
 	require.NoError(t, err)

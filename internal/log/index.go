@@ -7,8 +7,9 @@ import (
 	"github.com/tysonmote/gommap"
 )
 
-// indexは、4バイト分のポジションのオフセットと、8バイト分のポジション、
+// indexは、4バイト分のオフセットと、8バイト分のポジション、
 // 計12バイトが並ぶことにする
+// オフセット * entWidthで、実際のポジションが書かれたバイトにたどり着ける
 
 const (
 	offWidth uint64 = 4
