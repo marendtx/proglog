@@ -243,6 +243,8 @@ func testUnauthorized(
 	client api.LogClient,
 	config *Config,
 ) {
+	// 認証されていないnobbodyクライアントが何もできないこと、適切なエラーが返ることを確認するテスト
+
 	ctx := context.Background()
 	produce, err := client.Produce(ctx,
 		&api.ProduceRequest{
